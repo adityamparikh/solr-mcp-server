@@ -23,8 +23,9 @@ testcontainers = "1.21.3"
 
 [libraries]
 # Spring
-spring-boot-starter-webflux = { module = "org.springframework.boot:spring-boot-starter-webflux" }
-spring-ai-starter-mcp-server-webflux = { module = "org.springframework.ai:spring-ai-starter-mcp-server-webflux" }
+spring-boot-starter-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator" }
+spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web" }
+spring-ai-starter-mcp-server-webmvc = { module = "org.springframework.ai:spring-ai-starter-mcp-server-webmvc" }
 spring-ai-starter-mcp-client = { module = "org.springframework.ai:spring-ai-starter-mcp-client" }
 spring-ai-spring-boot-docker-compose = { module = "org.springframework.ai:spring-ai-spring-boot-docker-compose" }
 spring-ai-spring-boot-testcontainers = { module = "org.springframework.ai:spring-ai-spring-boot-testcontainers" }
@@ -58,14 +59,15 @@ junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher
 
 [bundles]
 spring-ai-mcp = [
-    "spring-boot-starter-webflux",
-    "spring-ai-starter-mcp-server-webflux"
+    "spring-boot-starter-web",
+    "spring-ai-starter-mcp-server-webmvc"
 ]
 
 spring-boot-dev = [
     "spring-boot-docker-compose",
     "spring-ai-spring-boot-docker-compose"
 ]
+
 
 test = [
     "spring-boot-starter-test",

@@ -368,18 +368,6 @@ HTTP/SSE transport has the following security vulnerabilities when deployed with
 4. **Network Exposure**: Unlike STDIO, HTTP endpoints are exposed over the network and accessible to any client that can
    reach the server
 
-### Securing HTTP/SSE Deployments
-
-If you need to deploy the MCP server with HTTP/SSE transport for remote access, you **must** implement security
-controls:
-
-1. **Use HTTPS**: Always use TLS/SSL encryption for production deployments
-2. **Implement OAuth2 Authentication**: Follow
-   the [Spring AI MCP OAuth2 guide](https://spring.io/blog/2025/04/02/mcp-server-oauth2/) to add authentication
-3. **Validate Origin Headers**: Implement origin header validation to prevent DNS rebinding attacks
-4. **Network Isolation**: Deploy behind a firewall or VPN, restricting access to trusted networks
-5. **Use API Gateways**: Consider deploying behind an API gateway with authentication and rate limiting
-
 ### Recommendation
 
 - **Local development/testing**: Use HTTP/SSE mode for testing with MCP Inspector, but only on localhost
