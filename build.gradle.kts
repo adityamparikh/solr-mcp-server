@@ -29,7 +29,6 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-actuator")
     annotationProcessor(libs.spring.boot.configuration.processor)
     annotationProcessor(libs.lombok)
 
@@ -37,11 +36,13 @@ dependencies {
 
     developmentOnly(libs.bundles.spring.boot.dev)
 
-    implementation(libs.spring.boot.starter.webflux)
-    implementation(libs.spring.ai.starter.mcp.server.webflux)
+    implementation(libs.spring.boot.starter.actuator)
+    implementation(libs.spring.boot.starter.web)
+    implementation(libs.spring.ai.starter.mcp.server.webmvc)
     implementation(libs.solr.solrj) {
         exclude(group = "org.apache.httpcomponents")
     }
+
     implementation(libs.commons.csv)
     // JSpecify for nullability annotations
     implementation(libs.jspecify)
